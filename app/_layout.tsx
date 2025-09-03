@@ -1,3 +1,5 @@
+import 'react-native-reanimated';
+
 import {
   Poppins_100Thin,
   Poppins_100Thin_Italic,
@@ -17,16 +19,14 @@ import {
   Poppins_800ExtraBold_Italic,
   Poppins_900Black,
   Poppins_900Black_Italic,
-  useFonts
+  useFonts,
 } from '@expo-google-fonts/poppins';
-
-
-import theme from '@/src/ui/theme/theme';
 import { ThemeProvider } from '@shopify/restyle';
 import { SplashScreen, Stack } from 'expo-router';
-import 'react-native-reanimated';
 
-SplashScreen.preventAutoHideAsync()
+import theme from '@/src/ui/theme/theme';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -47,21 +47,19 @@ export default function RootLayout() {
     Poppins_800ExtraBold,
     Poppins_800ExtraBold_Italic,
     Poppins_900Black,
-    Poppins_900Black_Italic
+    Poppins_900Black_Italic,
   });
-
 
   if (!loaded) return null;
 
   SplashScreen.hideAsync();
 
-
   return (
-      <ThemeProvider theme={theme}>
-        <Stack>
-          <Stack.Screen name="auth/sign-in" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Stack>
+        <Stack.Screen name="auth/sign-in" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </ThemeProvider>
   );
 }
