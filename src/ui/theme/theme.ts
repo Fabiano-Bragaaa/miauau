@@ -1,19 +1,34 @@
 import { createTheme } from '@shopify/restyle';
-
 const palette = {
-  fieryRed: '#A31621',
-  midnightBlack: '#171614',
-  pureWhite: '#FDFFFF',
+  fieryRed: '#FF4B4B',
+  midnightBlack: '#1B1B1B',
+  charcoalGrey: '#302E2D',
+  stoneGrey: '#5C5C5C',
+  pureWhite: '#FFFFFF',
   transparent: 'transparent',
+  fbErrorBg: '#3A1B1B',
+  fbErrorSurface: '#D32F2F',
+
+  fbSuccessBg: '#1E3320',
+  fbSuccessSurface: '#4CAF50',
+
+  fbWarningBg: '#1A2B3A',
+  fbWarningSurface: '#FFC107',
+
+  fbInfoBg: '#332B1A',
+  fbInfoSurface: '#42A5F5',
 };
 
 const theme = createTheme({
   colors: {
-    background: palette.pureWhite,
+    background: palette.midnightBlack,
     primary: palette.fieryRed,
-    text: palette.midnightBlack,
+    text: palette.pureWhite,
+    gray1: palette.charcoalGrey,
+    gray2: palette.stoneGrey,
     ...palette,
   },
+
   spacing: {
     s2: 2,
     s4: 4,
