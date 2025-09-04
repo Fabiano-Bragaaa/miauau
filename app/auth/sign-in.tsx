@@ -18,6 +18,9 @@ export default function SignIn() {
       <TextInput label="Email" placeholder="Digite seu email" />
       <TextInput label="Senha" placeholder="Digite sua senha" />
       <Button title="Entrar" onPress={() => {}} mt="s40" />
+      <Text color="gray2" alignSelf="center" mt="s24">
+        Ainda não tem uma conta? <Text color="primary">Criar</Text>
+      </Text>
     </Screen>
   );
 }
