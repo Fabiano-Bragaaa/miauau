@@ -1,11 +1,10 @@
-import { View } from 'react-native';
-
+import { Screen } from '@/src/ui/components/screen';
 import { Text } from '@/src/ui/components/text';
 
 export default function SignIn() {
   return (
-    <View style={{ padding: 50 }}>
+    <Screen>
       <Text>Texto Regular</Text>
-    </View>
+    </Screen>
   );
 }
