@@ -1,13 +1,13 @@
 import { createTheme } from '@shopify/restyle';
 const palette = {
-  fieryRed: '#FF4B4B',
+  fieryRed: '#D32F2F',
   midnightBlack: '#1B1B1B',
   charcoalGrey: '#302E2D',
   stoneGrey: '#5C5C5C',
   pureWhite: '#FFFFFF',
   transparent: 'transparent',
   fbErrorBg: '#3A1B1B',
-  fbErrorSurface: '#D32F2F',
+  fbErrorSurface: '#E62A38',
 
   fbSuccessBg: '#1E3320',
   fbSuccessSurface: '#4CAF50',

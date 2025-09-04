@@ -27,7 +27,7 @@ export function TextInput({
 
   return (
     <Box {...boxProps}>
-      <Text mb="s4" variant="text14">
+      <Text mb="s4" variant="text18">
         {label}
       </Text>
       <Box>
@@ -45,6 +45,9 @@ export function TextInput({
             placeholderTextColor={colors.gray2}
           />
         </Box>
+        <Text color="fbErrorSurface" variant="text12" marginVertical="s4">
+          {error}
+        </Text>
       </Box>
     </Box>
   );
