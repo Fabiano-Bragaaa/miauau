@@ -4,6 +4,7 @@ import { Button } from '@/src/ui/components/button';
 import { Screen } from '@/src/ui/components/screen';
 import { Text } from '@/src/ui/components/text';
 import { TextInput } from '@/src/ui/components/text-input';
+import { TextLink } from '@/src/ui/containers/auth/text-link';
 
 export default function SignIn() {
   return (
@@ -18,9 +19,11 @@ export default function SignIn() {
       <TextInput label="Email" placeholder="Digite seu email" />
       <TextInput label="Senha" placeholder="Digite sua senha" />
       <Button title="Entrar" onPress={() => {}} mt="s40" />
-      <Text color="gray2" alignSelf="center" mt="s24">
-        Ainda não tem uma conta? <Text color="primary">Criar</Text>
-      </Text>
+      <TextLink
+        text="Ainda não tem uma conta?"
+        ctaText="Criar"
+        href="/auth/sign-up"
+      />
     </Screen>
   );
 }

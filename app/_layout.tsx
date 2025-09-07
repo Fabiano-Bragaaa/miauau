@@ -57,7 +57,7 @@ export default function RootLayout() {
   return (
     <ThemeProvider theme={theme}>
       <Stack>
-        <Stack.Screen name="auth/sign-in" options={{ headerShown: false }} />
+        <Stack.Screen name="auth" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
