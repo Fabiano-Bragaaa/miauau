@@ -3,18 +3,37 @@ import { TouchableOpacityBox, type TouchableOpacityBoxProps } from './box';
 import { Text } from './text';
 
 type ButtonVariant = 'primary' | 'secondary';
+type ButtonUI = {
+  container: ThemeColors;
+  content: ThemeColors;
+};
 
 const buttonColors: Record<
   ButtonVariant,
-  { bg: ThemeColors; text: ThemeColors }
+  {
+    default: ButtonUI;
+    disabled: ButtonUI;
+  }
 > = {
   primary: {
-    bg: 'primary',
-    text: 'text',
+    default: {
+      container: 'primary',
+      content: 'text',
+    },
+    disabled: {
+      container: 'gray1',
+      content: 'text',
+    },
   },
   secondary: {
-    bg: 'gray1',
-    text: 'text',
+    default: {
+      container: 'gray1',
+      content: 'text',
+    },
+    disabled: {
+      container: 'gray1',
+      content: 'text',
+    },
   },
 };
 
@@ -30,20 +49,21 @@ export function Button({
   title,
   onPress,
   variant = 'primary',
+  disabled,
   ...touchableOpacityBoxProps
 }: ButtonProps) {
-  const buttonProps = buttonColors[variant];
+  const buttonProps = buttonColors[variant][disabled ? 'disabled' : 'default'];
   return (
     <TouchableOpacityBox
       onPress={onPress}
-      bg={buttonProps.bg}
+      bg={buttonProps.container}
       borderRadius="default"
       padding="padding"
       alignItems="center"
       justifyContent="center"
       {...touchableOpacityBoxProps}
     >
-      <Text color={buttonProps.text}>{title}</Text>
+      <Text color={buttonProps.content}>{title}</Text>
     </TouchableOpacityBox>
   );
 }

@@ -8,7 +8,7 @@ import { useAppTheme } from '../theme/use-app-theme';
 import { Box, type BoxProps } from './box';
 import { Text } from './text';
 
-type TextInputProps = RNTextInputProps & {
+export type TextInputProps = RNTextInputProps & {
   label: string;
   error?: string;
   boxProps?: BoxProps;
@@ -41,6 +41,7 @@ export function TextInput({
               height: '100%',
               width: '100%',
               flexShrink: 1,
+              color: colors.text,
             }}
             placeholderTextColor={colors.gray2}
           />

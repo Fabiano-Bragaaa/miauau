@@ -1,25 +1,26 @@
 import { Image } from 'react-native';
 
-import { Button } from '@/src/ui/components/button';
 import { Screen } from '@/src/ui/components/screen';
 import { Text } from '@/src/ui/components/text';
-import { TextInput } from '@/src/ui/components/text-input';
 import { TextLink } from '@/src/ui/containers/auth/text-link';
+import { SignUpForm } from '@/src/ui/containers/sign-up-form/sign-up-form';
+import { type SignUpSchema } from '@/src/ui/containers/sign-up-form/sign-up-schema';
 
 export default function SignUp() {
+  function handleSubmit(data: SignUpSchema) {
+    console.log(data);
+  }
+
   return (
-    <Screen>
+    <Screen scrollable>
       <Image
         source={require('@/assets/images/logo.png')}
         style={{ width: 200, height: 200, alignSelf: 'center' }}
       />
-      <Text marginBottom="s32" mt="s12" variant="title28" alignSelf="center">
+      <Text marginBottom="s32" variant="title28" alignSelf="center">
         Crie sua conta
       </Text>
-      <TextInput label="Nome" placeholder="Digite seu nome" />
-      <TextInput label="Email" placeholder="Digite seu email" />
-      <TextInput label="Senha" placeholder="Digite sua senha" />
-      <Button title="Criar conta" onPress={() => {}} mt="s40" />
+      <SignUpForm onSubmit={handleSubmit} />
       <TextLink text="Já possui uma conta?" ctaText="Entrar" />
     </Screen>
   );

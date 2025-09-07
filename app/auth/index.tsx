@@ -8,7 +8,7 @@ import { TextLink } from '@/src/ui/containers/auth/text-link';
 
 export default function SignIn() {
   return (
-    <Screen>
+    <Screen scrollable>
       <Image
         source={require('@/assets/images/logo.png')}
         style={{ width: 200, height: 200, alignSelf: 'center' }}
