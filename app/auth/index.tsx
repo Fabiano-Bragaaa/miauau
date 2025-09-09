@@ -1,10 +1,9 @@
 import { Image } from 'react-native';
 
-import { Button } from '@/src/ui/components/button';
 import { Screen } from '@/src/ui/components/screen';
 import { Text } from '@/src/ui/components/text';
-import { TextInput } from '@/src/ui/components/text-input';
 import { TextLink } from '@/src/ui/containers/auth/text-link';
+import { SignInForm } from '@/src/ui/containers/sign-in-form/sign-in-form';
 
 export default function SignIn() {
   return (
@@ -16,9 +15,7 @@ export default function SignIn() {
       <Text marginBottom="s32" mt="s12" variant="title28" alignSelf="center">
         Seja bem-vindo de volta
       </Text>
-      <TextInput label="Email" placeholder="Digite seu email" />
-      <TextInput label="Senha" placeholder="Digite sua senha" />
-      <Button title="Entrar" onPress={() => {}} mt="s40" />
+      <SignInForm onSubmit={() => {}} isLoading={false} />
       <TextLink
         text="Ainda não tem uma conta?"
         ctaText="Criar"

@@ -1,6 +1,7 @@
 import { ActivityIndicator } from 'react-native';
 
 import { type ThemeColors } from '../theme/theme';
+import { useAppTheme } from '../theme/use-app-theme';
 import { TouchableOpacityBox, type TouchableOpacityBoxProps } from './box';
 import { Text } from './text';
 
@@ -55,8 +56,10 @@ export function Button({
   loading,
   ...touchableOpacityBoxProps
 }: ButtonProps) {
-  const buttonProps =
-    buttonColors[variant][disabled && !loading ? 'disabled' : 'default'];
+  const buttonProps = buttonColors[variant][disabled ? 'disabled' : 'default'];
+
+  const { colors } = useAppTheme();
+
   return (
     <TouchableOpacityBox
       onPress={onPress}
@@ -68,7 +71,7 @@ export function Button({
       {...touchableOpacityBoxProps}
     >
       {loading ? (
-        <ActivityIndicator color={buttonProps.content} size={'small'} />
+        <ActivityIndicator color={colors.text} size={'small'} />
       ) : (
         <Text color={buttonProps.content}>{title}</Text>
       )}
