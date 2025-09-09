@@ -1,5 +1,6 @@
 import {
   type AuthRepo,
+  type AuthSignInParams,
   type AuthSignUpParams,
 } from '@/src/domain/auth/auth-repo';
 import { type AuthUser } from '@/src/domain/auth/auth-user';
@@ -8,10 +9,10 @@ import { supabase } from './supabase';
 import { supabaseAdapter } from './supabase-adapter';
 
 export class SupabaseAuthRepo implements AuthRepo {
-  async signIn(email: string, password: string): Promise<AuthUser> {
+  async signIn(params: AuthSignInParams): Promise<AuthUser> {
     const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+      email: params.email,
+      password: params.password,
     });
 
     if (error) {

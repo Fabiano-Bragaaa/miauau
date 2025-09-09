@@ -6,8 +6,13 @@ export type AuthSignUpParams = {
   password: string;
 };
 
+export type AuthSignInParams = {
+  email: string;
+  password: string;
+};
+
 export interface AuthRepo {
-  signIn(email: string, password: string): Promise<AuthUser>;
+  signIn(params: AuthSignInParams): Promise<AuthUser>;
   signUp(params: AuthSignUpParams): Promise<AuthUser>;
   signOut(): Promise<void>;
 }
