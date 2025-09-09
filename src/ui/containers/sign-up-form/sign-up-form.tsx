@@ -6,9 +6,10 @@ import { FormTextInput } from '../../components/form/form-text-input';
 import { type SignUpSchema, signUpSchema } from './sign-up-schema';
 type SignUpFormProps = {
   onSubmit: (data: SignUpSchema) => void;
+  isLoading: boolean;
 };
 
-export function SignUpForm({ onSubmit }: SignUpFormProps) {
+export function SignUpForm({ onSubmit, isLoading }: SignUpFormProps) {
   const { control, handleSubmit, formState } = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -47,7 +48,8 @@ export function SignUpForm({ onSubmit }: SignUpFormProps) {
         placeholder="Digite sua senha novamente"
       />
       <Button
-        disabled={!formState.isValid}
+        disabled={!formState.isValid || isLoading}
+        loading={isLoading}
         title="Cadastrar"
         onPress={handleSubmit(onSubmit)}
       />

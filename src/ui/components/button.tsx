@@ -1,3 +1,5 @@
+import { ActivityIndicator } from 'react-native';
+
 import { type ThemeColors } from '../theme/theme';
 import { TouchableOpacityBox, type TouchableOpacityBoxProps } from './box';
 import { Text } from './text';
@@ -50,9 +52,11 @@ export function Button({
   onPress,
   variant = 'primary',
   disabled,
+  loading,
   ...touchableOpacityBoxProps
 }: ButtonProps) {
-  const buttonProps = buttonColors[variant][disabled ? 'disabled' : 'default'];
+  const buttonProps =
+    buttonColors[variant][disabled && !loading ? 'disabled' : 'default'];
   return (
     <TouchableOpacityBox
       onPress={onPress}
@@ -63,7 +67,11 @@ export function Button({
       justifyContent="center"
       {...touchableOpacityBoxProps}
     >
-      <Text color={buttonProps.content}>{title}</Text>
+      {loading ? (
+        <ActivityIndicator color={buttonProps.content} size={'small'} />
+      ) : (
+        <Text color={buttonProps.content}>{title}</Text>
+      )}
     </TouchableOpacityBox>
   );
 }
