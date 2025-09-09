@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-import { storage } from '../infra/storage/storage';
+import { storage } from '../../infra/storage/storage';
 import { type AuthUser } from './auth-user';
 
 type AuthCredentialsType = {

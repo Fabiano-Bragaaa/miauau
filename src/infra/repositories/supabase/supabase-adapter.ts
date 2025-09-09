@@ -1,6 +1,6 @@
 import { type AuthUser as SupabaseAuthUser } from '@supabase/supabase-js';
 
-import { type AuthUser } from '@/src/domain/auth-user';
+import { type AuthUser } from '@/src/domain/auth/auth-user';
 
 function toAuthUser(supabaseUser: SupabaseAuthUser): AuthUser {
   if (!supabaseUser.email) {

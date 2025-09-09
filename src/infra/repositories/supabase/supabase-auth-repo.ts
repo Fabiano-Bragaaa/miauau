@@ -1,5 +1,8 @@
-import { type AuthRepo, type AuthSignUpParams } from '@/src/domain/auth-repo';
-import { type AuthUser } from '@/src/domain/auth-user';
+import {
+  type AuthRepo,
+  type AuthSignUpParams,
+} from '@/src/domain/auth/auth-repo';
+import { type AuthUser } from '@/src/domain/auth/auth-user';
 
 import { supabase } from './supabase';
 import { supabaseAdapter } from './supabase-adapter';

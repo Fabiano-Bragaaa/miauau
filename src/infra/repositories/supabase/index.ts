@@ -1,5 +1,5 @@
 import { SupabaseAuthRepo } from './supabase-auth-repo';
 
-export const supabseRepository = {
-  auth: SupabaseAuthRepo,
+export const supabaseRepository = {
+  auth: new SupabaseAuthRepo(),
 };
