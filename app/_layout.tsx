@@ -24,8 +24,8 @@ import {
 import { ThemeProvider } from '@shopify/restyle';
 import { SplashScreen, Stack } from 'expo-router';
 
+import { InMemoryRepository } from '@/src/infra/repositories/in-memory';
 import { RepositoryProvider } from '@/src/infra/repositories/repository-provider';
-import { supabaseRepository } from '@/src/infra/repositories/supabase';
 import theme from '@/src/ui/theme/theme';
 
 SplashScreen.preventAutoHideAsync();
@@ -57,7 +57,7 @@ export default function RootLayout() {
   SplashScreen.hideAsync();
 
   return (
-    <RepositoryProvider value={supabaseRepository}>
+    <RepositoryProvider value={InMemoryRepository}>
       <ThemeProvider theme={theme}>
         <Stack>
           <Stack.Screen name="auth" options={{ headerShown: false }} />

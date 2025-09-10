@@ -10,7 +10,7 @@ function toAuthUser(supabaseUser: SupabaseAuthUser): AuthUser {
   return {
     id: supabaseUser.id,
     email: supabaseUser.email,
-    name: supabaseUser.user_metadata.fullname,
+    fullname: supabaseUser.user_metadata.fullname,
   };
 }
 
